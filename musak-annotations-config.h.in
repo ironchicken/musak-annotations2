@@ -1,2 +1,7 @@
+#ifndef MUSAK_CONFIG_H
+#define MUSAK_CONFIG_H
+
 #define MuSAK_Annotations_VERSION_MAJOR @MuSAK_Annotations_VERSION_MAJOR@
 #define MuSAK_Annotations_VERSION_MINOR @MuSAK_Annotations_VERSION_MINOR@
+
+#endif
