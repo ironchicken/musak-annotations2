@@ -2,9 +2,10 @@
 #define MUSAK_MARK_H
 
 #include "musak.hpp"
+#include "timestamp.hpp"
 #include <tuple>
 #include <memory>
-#include <ctime>
+#include <string>
 
 namespace musak {
 
@@ -12,8 +13,11 @@ namespace musak {
 
         class mark {
         public:
-            mark(const std::string &c, int pen, int startX, int startY, int endX, int endY, const std::string &t);
-            ~mark();
+            mark(const std::string &c, int p, int sx, int sy,
+                 int ex, int ey, const std::string &t) : col(c), pen(p), startX(sx), startY(sy),
+                                                         endX(ex), endY(ey),
+                                                         tod(std::unique_ptr<timestamp>(new timestamp(t))) { };
+           ~mark();
 
             const std::pair<int, int> &start();
             const std::pair<int, int> &end();
@@ -25,7 +29,7 @@ namespace musak {
             int startY;
             int endX;
             int endY;
-            std::unique_ptr<tm> tod;
+            std::unique_ptr<timestamp> tod;
 
         }; // class mark
 
