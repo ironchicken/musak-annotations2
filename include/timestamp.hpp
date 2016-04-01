@@ -10,8 +10,6 @@ namespace musak {
 
     namespace annotations {
 
-        std::tuple<int,int,int,int> parse_ts(const std::string &ts);
-
         class timestamp {
         public:
             timestamp(const std::string &ts) : timestamp(parse_ts(ts)) { };
@@ -22,8 +20,6 @@ namespace musak {
                 hours(h), minutes(m), seconds(s), milliseconds(ms) { };
            ~timestamp();
 
-            friend std::tuple<int,int,int,int> parse_ts(const std::string &ts);
-
         private:
             const static std::regex ts_regex;
 
@@ -32,6 +28,7 @@ namespace musak {
             int seconds;
             int milliseconds;
 
+            static const std::tuple<int,int,int,int> parse_ts(const std::string &ts);
             const std::string show();
 
         }; // timestamp class
