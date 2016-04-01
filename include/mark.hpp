@@ -13,14 +13,14 @@ namespace musak {
 
         class mark {
         public:
-            mark(const std::string &c, int p, int sx, int sy,
-                 int ex, int ey, const std::string &t) : col(c), pen(p), startX(sx), startY(sy),
+            mark(const std::string& c, int p, int sx, int sy,
+                 int ex, int ey, const std::string& t) : col(c), pen(p), startX(sx), startY(sy),
                                                          endX(ex), endY(ey),
                                                          tod(std::unique_ptr<timestamp>(new timestamp(t))) { };
            ~mark();
 
-            const std::pair<int, int> &start();
-            const std::pair<int, int> &end();
+            const std::pair<int, int>& start();
+            const std::pair<int, int>& end();
 
         private:
             std::string col;

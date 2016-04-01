@@ -11,8 +11,8 @@ namespace musak {
 
         class page {
         public:
-            page (const std::vector<mark> &marks, const std::string &sourceFile);
-            ~page();
+            page (const std::vector<mark>& marks, const std::string& sourceFile);
+           ~page();
             bool empty();
             void load();
 

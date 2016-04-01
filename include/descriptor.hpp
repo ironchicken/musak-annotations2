@@ -10,11 +10,11 @@ namespace musak {
 
         class descriptor {
         public:
-            descriptor(const shape &s);
+            descriptor(const shape& s);
             virtual ~descriptor();
 
-            virtual double distance(const descriptor &d) = 0;
-            virtual double distance(const shape &s) = 0;
+            virtual double distance(const descriptor& d) = 0;
+            virtual double distance(const shape& s) = 0;
 
         }; // class descriptor
 

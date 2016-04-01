@@ -8,7 +8,7 @@
 
 const std::regex musak::annotations::timestamp::ts_regex = std::regex("([0-9]{2}):([0-9]{2}):([0-9]{2})\.([0-9]+)");
 
-const std::tuple<int,int,int,int> musak::annotations::timestamp::parse_ts(const std::string &ts) {
+const std::tuple<int,int,int,int> musak::annotations::timestamp::parse_ts(const std::string& ts) {
     std::smatch m;
     bool found = std::regex_search(ts, m, ts_regex);
     if (found) {

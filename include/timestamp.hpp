@@ -12,7 +12,7 @@ namespace musak {
 
         class timestamp {
         public:
-            timestamp(const std::string &ts) : timestamp(parse_ts(ts)) { };
+            timestamp(const std::string& ts) : timestamp(parse_ts(ts)) { };
             timestamp(std::tuple<int,int,int,int> t) :
                 hours(std::get<0>(t)), minutes(std::get<1>(t)), seconds(std::get<2>(t)),
                 milliseconds(std::get<3>(t)) { };
@@ -28,7 +28,7 @@ namespace musak {
             int seconds;
             int milliseconds;
 
-            static const std::tuple<int,int,int,int> parse_ts(const std::string &ts);
+            static const std::tuple<int,int,int,int> parse_ts(const std::string& ts);
             const std::string show();
 
         }; // timestamp class
