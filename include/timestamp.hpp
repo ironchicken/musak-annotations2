@@ -32,6 +32,8 @@ namespace musak {
             int seconds;
             int milliseconds;
 
+            const std::string show();
+
         }; // timestamp class
 
     } // namesace annotations

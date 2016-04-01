@@ -3,6 +3,8 @@
 #include <tuple>
 #include <string>
 #include <exception>
+#include <sstream>
+#include <boost/format.hpp>
 
 const std::regex musak::annotations::timestamp::ts_regex = std::regex("([0-9]{2}):([0-9]{2}):([0-9]{2})\.([0-9]+)");
 
@@ -14,4 +16,10 @@ std::tuple<int,int,int,int> musak::annotations::parse_ts(const std::string &ts) 
     } else {
         throw std::runtime_error(ts + " is not a valid time-stamp value");
     }
+}
+
+const std::string musak::annotations::timestamp::show() {
+    std::ostringstream s;
+    s << boost::format("%2d:%2d:%2d.%3d") % hours % minutes % seconds % milliseconds;
+    return s.str();
 }
