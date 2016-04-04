@@ -15,4 +15,8 @@ include_directories(${MuSAK-Annotations_SOURCE_DIR}/src)
 include_directories(${MuSAK-Annotations_SOURCE_DIR}/include)
 include_directories(${MuSAK-Annotations_BINARY_DIR})
 
-add_executable(MuSAK-Annotations src/musak-annotations.cpp)
+add_subdirectory(src)
+add_subdirectory(tests)
+
+enable_testing()
+add_test(NAME timestamp_read COMMAND timestamp_read)
