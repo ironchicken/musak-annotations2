@@ -5,6 +5,7 @@
 #include <string>
 #include <regex>
 #include <tuple>
+#include <ostream>
 
 namespace musak {
 
@@ -22,6 +23,8 @@ namespace musak {
                 hours(h), minutes(m), seconds(s), milliseconds(ms) { };
 
             const hms_t get_hms();
+
+            friend std::ostream& operator<<(std::ostream& st, timestamp& ts) { return st << ts.show(); }
 
         private:
             const static std::regex ts_regex;
