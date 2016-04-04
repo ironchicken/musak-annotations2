@@ -7,12 +7,12 @@ set (MuSAK_Annotations_VERSION_MINOR 1)
 set(CMAKE_CXX_FLAGS "-g -Wall -std=c++11")
 
 configure_file (
-  "${PROJECT_SOURCE_DIR}/musak-annotations-config.h.in"
-  "${PROJECT_BINARY_DIR}/musak-annotations-config.h"
+  ${MuSAK-Annotations_SOURCE_DIR}/musak-annotations-config.h.in
+  ${MuSAK-Annotations_BINARY_DIR}/musak-annotations-config.h
   )
 
-include_directories("${PROJECT_SOURCE_DIR}/src")
-include_directories("${PROJECT_SOURCE_DIR}/include")
-include_directories("${PROJECT_BINARY_DIR}")
+include_directories(${MuSAK-Annotations_SOURCE_DIR}/src)
+include_directories(${MuSAK-Annotations_SOURCE_DIR}/include)
+include_directories(${MuSAK-Annotations_BINARY_DIR})
 
 add_executable(MuSAK-Annotations src/musak-annotations.cpp)
