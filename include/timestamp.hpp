@@ -20,7 +20,6 @@ namespace musak {
                 milliseconds(std::get<3>(t)) { };
             timestamp(const int h, const int m, const int s, const int ms) :
                 hours(h), minutes(m), seconds(s), milliseconds(ms) { };
-           ~timestamp();
 
             const hms_t get_hms();
 
