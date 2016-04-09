@@ -20,8 +20,8 @@ namespace musak {
                                                          endX(ex), endY(ey),
                                                          tod(std::unique_ptr<timestamp>(new timestamp(t))) { };
 
-            const std::pair<int, int>& start();
-            const std::pair<int, int>& end();
+            const std::pair<int, int>& start() const;
+            const std::pair<int, int>& end() const;
 
         private:
             std::string col;

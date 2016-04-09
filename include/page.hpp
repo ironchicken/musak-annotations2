@@ -13,7 +13,7 @@ namespace musak {
         public:
             page (const std::vector<mark>& marks, const std::string& sourceFile);
            ~page();
-            bool empty();
+            bool empty() const;
             void load();
 
         private:

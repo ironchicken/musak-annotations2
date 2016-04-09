@@ -19,13 +19,13 @@ namespace musak {
             shape(std::string& id, std::vector<mark>& marks);
            ~shape();
 
-            bool            empty();
-            const bounds_t& bounds();
-            const point_t&  size();
-            const point_t&  offset();
+            bool            empty() const;
+            const bounds_t& bounds() const;
+            const point_t&  size() const;
+            const point_t&  offset() const;
             void            translateTo(const point_t& offset);
-            double          length();
-            double          perimeter();
+            double          length() const;
+            double          perimeter() const;
 
         private:
             std::string id;

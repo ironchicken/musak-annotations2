@@ -22,7 +22,7 @@ namespace musak {
             timestamp(const int h, const int m, const int s, const int ms) :
                 hours(h), minutes(m), seconds(s), milliseconds(ms) { };
 
-            const hms_t get_hms();
+            const hms_t get_hms() const;
 
             friend std::ostream& operator<<(std::ostream& st, timestamp& ts) { return st << ts.show(); }
 
@@ -35,7 +35,7 @@ namespace musak {
             int milliseconds;
 
             static const hms_t parse_ts(const std::string& ts);
-            const std::string show();
+            const std::string show() const;
 
         }; // timestamp class
 

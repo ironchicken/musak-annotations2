@@ -18,11 +18,11 @@ const musak::annotations::hms_t musak::annotations::timestamp::parse_ts(const st
     }
 }
 
-const musak::annotations::hms_t musak::annotations::timestamp::get_hms() {
+const musak::annotations::hms_t musak::annotations::timestamp::get_hms() const {
     return std::make_tuple(this->hours, this->minutes, this->seconds, this->milliseconds);
 }
 
-const std::string musak::annotations::timestamp::show() {
+const std::string musak::annotations::timestamp::show() const {
     std::ostringstream s;
     s << boost::format("%2d:%2d:%2d.%3d") % hours % minutes % seconds % milliseconds;
     return s.str();
