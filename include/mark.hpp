@@ -13,8 +13,8 @@ namespace musak {
 
         class mark {
         public:
-            mark() { tod = NULL; }
-            mark(const mark&) { tod = NULL; }
+            mark() { tod = nullptr; }
+            mark(const mark&) { tod = nullptr; }
             mark(const std::string& c, int p, int sx, int sy,
                  int ex, int ey, const std::string& t) : col(c), pen(p), startX(sx), startY(sy),
                                                          endX(ex), endY(ey),
