@@ -11,7 +11,7 @@ namespace musak {
 
     namespace annotations {
 
-        typedef std::tuple<int,int,int,int> hms_t;
+        using hms_t = std::tuple<int,int,int,int>;
 
         class timestamp {
         public:

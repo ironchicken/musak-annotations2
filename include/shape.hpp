@@ -10,8 +10,8 @@ namespace musak {
 
     namespace annotations {
 
-        typedef std::tuple<int, int, int, int> bounds_t;
-        typedef std::pair<int, int> point_t;
+        using bounds_t = std::tuple<int, int, int, int>;
+        using point_t = std::pair<int, int>;
 
         class shape {
         public:
