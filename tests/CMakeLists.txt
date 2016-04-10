@@ -10,3 +10,9 @@ target_link_libraries(timestamp_read
   musakannotations ${Boost_FILESYSTEM_LIBRARY}
   ${Boost_SYSTEM_LIBRARY}
   ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+add_executable(mark_create mark_create.cpp)
+target_link_libraries(mark_create
+  musakannotations ${Boost_FILESYSTEM_LIBRARY}
+  ${Boost_SYSTEM_LIBRARY}
+  ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})

@@ -20,3 +20,4 @@ add_subdirectory(tests)
 
 enable_testing()
 add_test(NAME timestamp_read COMMAND timestamp_read)
+add_test(NAME mark_create COMMAND mark_create)
