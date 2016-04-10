@@ -20,8 +20,8 @@ namespace musak {
                                                          endX(ex), endY(ey),
                                                          tod(std::unique_ptr<timestamp>(new timestamp(t))) { };
 
-            const std::pair<const int&, const int&> start() const;
-            const std::pair<const int&, const int&> end() const;
+            const point_t start() const;
+            const point_t end() const;
             const timestamp& time() const;
 
         private:

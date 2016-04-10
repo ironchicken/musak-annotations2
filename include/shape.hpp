@@ -10,9 +10,6 @@ namespace musak {
 
     namespace annotations {
 
-        using bounds_t = std::tuple<int, int, int, int>;
-        using point_t = std::pair<int, int>;
-
         class shape {
         public:
             shape();
