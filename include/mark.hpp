@@ -22,6 +22,7 @@ namespace musak {
 
             const std::pair<const int&, const int&> start() const;
             const std::pair<const int&, const int&> end() const;
+            const timestamp& time() const;
 
         private:
             std::string col;

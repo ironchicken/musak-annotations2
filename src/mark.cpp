@@ -9,3 +9,7 @@ const std::pair<const int&, const int&> mark::start() const {
 const std::pair<const int&, const int&> mark::end() const {
     return std::pair<const int&, const int&>(this->endX, this->endY);
 }
+
+const timestamp& mark::time() const {
+    return *(this->tod);
+}
