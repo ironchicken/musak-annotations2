@@ -5,8 +5,11 @@
 namespace musak {
 
     namespace annotations {
-        using bounds_t = std::tuple<const int&, const int&, const int&, const int&>;
-        using point_t = std::pair<const int&, const int&>;
+        using bounds_t = std::tuple<int, int, int, int>;
+        using point_t = std::pair<int, int>;
+
+        constexpr bounds_t zero_bounds(std::make_tuple(0,0,0,0));
+        constexpr point_t origin(std::make_pair(0,0));
 
     } // namespace annotations
 
