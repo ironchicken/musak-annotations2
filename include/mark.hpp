@@ -35,7 +35,7 @@ namespace musak {
 
         }; // class mark
 
-    } // namesace annotations
+    } // namespace annotations
 
 } // namespace musak
 

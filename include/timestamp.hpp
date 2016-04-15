@@ -39,7 +39,7 @@ namespace musak {
 
         }; // timestamp class
 
-    } // namesace annotations
+    } // namespace annotations
 
 } // namespace musak
 

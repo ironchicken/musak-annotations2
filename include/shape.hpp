@@ -30,7 +30,7 @@ namespace musak {
 
         }; // class shape
 
-    } // namesace annotations
+    } // namespace annotations
 
 } // namespace musak
 

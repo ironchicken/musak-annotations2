@@ -18,7 +18,7 @@ namespace musak {
 
         }; // class descriptor
 
-    } // namesace annotations
+    } // namespace annotations
 
 } // namespace musak
 
