@@ -22,3 +22,9 @@ target_link_libraries(page_load
   musakannotations ${Boost_FILESYSTEM_LIBRARY}
   ${Boost_SYSTEM_LIBRARY}
   ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
+
+add_executable(shapes shapes.cpp)
+target_link_libraries(shapes
+  musakannotations ${Boost_FILESYSTEM_LIBRARY}
+  ${Boost_SYSTEM_LIBRARY}
+  ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
