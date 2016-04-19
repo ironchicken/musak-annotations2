@@ -4,7 +4,6 @@
 #include "musak.hpp"
 #include "mark.hpp"
 #include <vector>
-#include <tuple>
 
 namespace musak {
 
@@ -12,17 +11,15 @@ namespace musak {
 
         class shape {
         public:
-            shape();
-            shape(std::string& id, std::vector<mark>& marks);
-           ~shape();
+            shape() { };
+            shape(const std::string& i, const std::vector<mark>& m) : id(i), marks(m) { };
 
-            bool            empty() const;
-            const bounds_t& bounds() const;
-            const point_t&  size() const;
-            const point_t&  offset() const;
-            void            translateTo(const point_t& offset);
-            double          length() const;
-            double          perimeter() const;
+            bool           empty() const noexcept;
+            const bounds_t bounds() const noexcept;
+            const point_t  size() const noexcept;
+            const point_t  offset() const noexcept;
+            void           translateTo(const point_t& offset) noexcept;
+            double         perimeter() const noexcept;
 
         private:
             std::string id;
