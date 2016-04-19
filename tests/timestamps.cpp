@@ -1,4 +1,4 @@
-#define BOOST_TEST_MODULE timestamp_read
+#define BOOST_TEST_MODULE timestamps
 #include <boost/test/unit_test.hpp>
 #include "timestamp.hpp"
 #include <string>

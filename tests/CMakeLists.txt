@@ -5,20 +5,20 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 add_definitions(-DBOOST_TEST_DYN_LINK)
 
-add_executable(timestamp_read timestamp_read.cpp)
-target_link_libraries(timestamp_read
+add_executable(timestamps timestamps.cpp)
+target_link_libraries(timestamps
   musakannotations ${Boost_FILESYSTEM_LIBRARY}
   ${Boost_SYSTEM_LIBRARY}
   ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
 
-add_executable(mark_create mark_create.cpp)
-target_link_libraries(mark_create
+add_executable(marks marks.cpp)
+target_link_libraries(marks
   musakannotations ${Boost_FILESYSTEM_LIBRARY}
   ${Boost_SYSTEM_LIBRARY}
   ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})
 
-add_executable(page_load page_load.cpp)
-target_link_libraries(page_load
+add_executable(pages pages.cpp)
+target_link_libraries(pages
   musakannotations ${Boost_FILESYSTEM_LIBRARY}
   ${Boost_SYSTEM_LIBRARY}
   ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY})

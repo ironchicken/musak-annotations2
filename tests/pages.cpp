@@ -1,4 +1,4 @@
-#define BOOST_TEST_MODULE page_load
+#define BOOST_TEST_MODULE pages
 #include <boost/test/unit_test.hpp>
 #include "page.hpp"
 #include <boost/filesystem.hpp>

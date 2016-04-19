@@ -1,4 +1,4 @@
-#define BOOST_TEST_MODULE mark_create
+#define BOOST_TEST_MODULE marks
 #include <boost/test/unit_test.hpp>
 #include "mark.hpp"
 
