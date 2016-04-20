@@ -7,34 +7,43 @@
 
 using namespace musak::annotations;
 
-BOOST_AUTO_TEST_CASE(shape_create)
+BOOST_AUTO_TEST_CASE(shape_create_empty)
 {
-    auto s1 = shape();
-    BOOST_CHECK(s1.empty() == true);
-
-    std::vector<mark> ms { mark("#000000", 2, 0, 0, 10, 10, "00:00:00.0") };
-    auto s2 = shape("s2", ms);
-
-    BOOST_CHECK(s2.empty() == false);
+    auto s = shape();
+    BOOST_CHECK(s.empty() == true);
 }
 
-BOOST_AUTO_TEST_CASE(shape_bounds)
+BOOST_AUTO_TEST_CASE(shape_create_nonempty)
 {
-    auto s1 = shape();
-    BOOST_CHECK(s1.bounds() == zero_bounds);
+    std::vector<mark> ms { mark("#000000", 2, 0, 0, 10, 10, "00:00:00.0") };
+    auto s = shape("s", ms);
 
-    std::vector<mark> ms2 { mark("#000000", 2, 0, 0, 10, 10, "00:00:00.0") };
-    auto s2 = shape("s2", ms2);
-    bounds_t s2_bounds = std::make_tuple(0,0,10,10);
+    BOOST_CHECK(s.empty() == false);
+}
 
-    BOOST_CHECK(s2.bounds() == s2_bounds);
+BOOST_AUTO_TEST_CASE(shape_bounds_zero)
+{
+    auto s = shape();
+    BOOST_CHECK(s.bounds() == zero_bounds);
+}
 
-    std::vector<mark> ms3 { mark("#000000", 2,  0,  0,  0, 10, "00:00:00.0"),
+BOOST_AUTO_TEST_CASE(shape_bounds_line)
+{
+    std::vector<mark> ms { mark("#000000", 2, 0, 0, 10, 10, "00:00:00.0") };
+    auto s = shape("s", ms);
+    bounds_t s_bounds = std::make_tuple(0,0,10,10);
+
+    BOOST_CHECK(s.bounds() == s_bounds);
+}
+
+BOOST_AUTO_TEST_CASE(shape_bounds_square)
+{
+    std::vector<mark> ms { mark("#000000", 2,  0,  0,  0, 10, "00:00:00.0"),
             mark("#000000", 2,  0, 10, 10, 10, "00:00:00.0"),
             mark("#000000", 2, 10, 10,  0, 10, "00:00:00.0"),
             mark("#000000", 2,  0, 10,  0,  0, "00:00:00.0") };
-    auto s3 = shape("s3", ms3);
-    bounds_t s3_bounds = std::make_tuple(0,0,10,10);
+    auto s = shape("s", ms);
+    bounds_t s_bounds = std::make_tuple(0,0,10,10);
 
-    BOOST_CHECK(s3.bounds() == s3_bounds);
+    BOOST_CHECK(s.bounds() == s_bounds);
 }
