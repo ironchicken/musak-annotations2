@@ -36,3 +36,14 @@ const bounds_t shape::bounds() const noexcept {
 
     return std::make_tuple(left, top, right, bottom);
 }
+
+const point_t shape::size() const noexcept {
+    auto bnds = this->bounds();
+    auto width = std::abs(getLeft(bnds) - getRight(bnds));
+    auto height = std::abs(getTop(bnds) - getBottom(bnds));
+
+    if (width < 1) width = 1;
+    if (height < 1) height = 1;
+
+    return std::make_pair(width, height);
+}

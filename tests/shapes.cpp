@@ -47,3 +47,33 @@ BOOST_AUTO_TEST_CASE(shape_bounds_square)
 
     BOOST_CHECK(s.bounds() == s_bounds);
 }
+
+BOOST_AUTO_TEST_CASE(shape_size_diag)
+{
+    std::vector<mark> ms { mark("#000000", 2, 0, 0, 10, 10, "00:00:00.0") };
+    auto s = shape("s", ms);
+    point_t s_size = std::make_pair(10, 10);
+
+    BOOST_CHECK(s.size() == s_size);
+}
+
+BOOST_AUTO_TEST_CASE(shape_size_vertical)
+{
+    std::vector<mark> ms { mark("#000000", 2, 0, 0, 0, 10, "00:00:00.0") };
+    auto s = shape("s", ms);
+    point_t s_size = std::make_pair(1, 10);
+
+    BOOST_CHECK(s.size() == s_size);
+}
+
+BOOST_AUTO_TEST_CASE(shape_size_square)
+{
+    std::vector<mark> ms { mark("#000000", 2,  0,  0,  0, 10, "00:00:00.0"),
+            mark("#000000", 2,  0, 10, 10, 10, "00:00:00.0"),
+            mark("#000000", 2, 10, 10,  0, 10, "00:00:00.0"),
+            mark("#000000", 2,  0, 10,  0,  0, "00:00:00.0") };
+    auto s = shape("s", ms);
+    point_t s_size = std::make_pair(10, 10);
+
+    BOOST_CHECK(s.size() == s_size);
+}
