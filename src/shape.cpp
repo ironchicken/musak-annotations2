@@ -1,11 +1,17 @@
 #include "musak.hpp"
 #include "shape.hpp"
+#include <tuple>
 
 using namespace musak::annotations;
 
 bool shape::empty() const noexcept {
     return this->marks.empty();
 }
+
+inline const int getLeft(bounds_t& bnds) { return std::get<0>(bnds); }
+inline const int getTop(bounds_t& bnds) { return std::get<1>(bnds); }
+inline const int getRight(bounds_t& bnds) { return std::get<2>(bnds); }
+inline const int getBottom(bounds_t& bnds) { return std::get<3>(bnds); }
 
 const bounds_t shape::bounds() const noexcept {
     if (this->empty()) { return zero_bounds; }
