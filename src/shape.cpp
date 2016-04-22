@@ -16,7 +16,10 @@ inline const int getBottom(bounds_t& bnds) { return std::get<3>(bnds); }
 const bounds_t shape::bounds() const noexcept {
     if (this->empty()) { return zero_bounds; }
 
-    auto left = 0; auto top = 0; auto right = 0; auto bottom = 0;
+    auto m0 = this->marks[0];
+    auto left = m0.start().first; auto top = m0.start().second;
+    auto right = m0.end().first; auto bottom = m0.end().second;
+
     for (auto& m : this->marks) {
         auto s = m.start();
         auto e = m.end();

@@ -48,6 +48,18 @@ BOOST_AUTO_TEST_CASE(shape_bounds_square)
     BOOST_CHECK(s.bounds() == s_bounds);
 }
 
+BOOST_AUTO_TEST_CASE(shape_bounds_offset_square)
+{
+    std::vector<mark> ms { mark("#000000", 2,  5,  5,  5, 10, "00:00:00.0"),
+            mark("#000000", 2,  5, 10, 10, 10, "00:00:00.0"),
+            mark("#000000", 2, 10, 10,  5, 10, "00:00:00.0"),
+            mark("#000000", 2,  5, 10,  5,  5, "00:00:00.0") };
+    auto s = shape("s", ms);
+    bounds_t s_bounds = std::make_tuple(5,5,10,10);
+
+    BOOST_CHECK(s.bounds() == s_bounds);
+}
+
 BOOST_AUTO_TEST_CASE(shape_size_diag)
 {
     std::vector<mark> ms { mark("#000000", 2, 0, 0, 10, 10, "00:00:00.0") };
