@@ -50,3 +50,9 @@ const point_t shape::size() const noexcept {
 
     return std::make_pair(width, height);
 }
+
+const point_t shape::offset() const noexcept {
+    auto bnds = this->bounds();
+
+    return std::make_pair(getLeft(bnds), getTop(bnds));
+}
