@@ -10,11 +10,11 @@ namespace musak {
         using point_t = std::pair<int, int>;
 
         inline std::ostream& operator<<(std::ostream& st, const bounds_t& b) {
-            st << "(" << std::get<0>(b) << "," << std::get<1>(b) << "," << std::get<2>(b) << "," << std::get<3>(b) << ")";
+            return st << "(" << std::get<0>(b) << "," << std::get<1>(b) << "," << std::get<2>(b) << "," << std::get<3>(b) << ")";
         }
 
         inline std::ostream& operator<<(std::ostream& st, const point_t& p) {
-            st << "(" << p.first << "," << p.second << ")";
+            return st << "(" << p.first << "," << p.second << ")";
         }
 
         constexpr bounds_t zero_bounds(std::make_tuple(0,0,0,0));
