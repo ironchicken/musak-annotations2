@@ -56,3 +56,9 @@ const point_t shape::offset() const noexcept {
 
     return std::make_pair(getLeft(bnds), getTop(bnds));
 }
+
+void shape::translateBy(const point_t& offset) noexcept {
+    for (auto& m : this->marks) {
+        m.translateBy(offset);
+    }
+}

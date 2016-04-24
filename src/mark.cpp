@@ -28,3 +28,10 @@ const point_t mark::end() const {
 const timestamp& mark::time() const {
     return *(this->tod);
 }
+
+void mark::translateBy(const point_t& offset) noexcept {
+    this->startX += offset.first;
+    this->endX += offset.first;
+    this->startY += offset.second;
+    this->endY += offset.second;
+}

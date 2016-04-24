@@ -101,3 +101,28 @@ BOOST_AUTO_TEST_CASE(shape_offset)
 
     BOOST_CHECK(s.offset() == s_offset);
 }
+
+BOOST_AUTO_TEST_CASE(shape_translate)
+{
+    std::vector<mark> ms { mark("#000000", 2, 0, 0, 10, 10, "00:00:00.0") };
+    auto s = shape("s", ms);
+    point_t s_translation = std::make_pair(5, 5);
+    s.translateBy(s_translation);
+    point_t s_newOffs = std::make_pair(5, 5);
+
+    BOOST_CHECK(s.offset() == s_newOffs);
+}
+
+BOOST_AUTO_TEST_CASE(shape_translate_square)
+{
+    std::vector<mark> ms { mark("#000000", 2,  5,  5,  5, 10, "00:00:00.0"),
+            mark("#000000", 2,  5, 10, 10, 10, "00:00:00.0"),
+            mark("#000000", 2, 10, 10,  5, 10, "00:00:00.0"),
+            mark("#000000", 2,  5, 10,  5,  5, "00:00:00.0") };
+    auto s = shape("s", ms);
+    point_t s_translation = std::make_pair(-5, -5);
+    s.translateBy(s_translation);
+    point_t s_newOffs = std::make_pair(0, 0);
+
+    BOOST_CHECK(s.offset() == s_newOffs);
+}

@@ -18,7 +18,7 @@ namespace musak {
             const bounds_t bounds() const noexcept;
             const point_t  size() const noexcept;
             const point_t  offset() const noexcept;
-            void           translateTo(const point_t& offset) noexcept;
+            void           translateBy(const point_t& offset) noexcept;
             double         perimeter() const noexcept;
 
         private:
