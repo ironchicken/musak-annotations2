@@ -1,6 +1,7 @@
 #include "musak.hpp"
 #include "mark.hpp"
 #include <utility>
+#include <cmath>
 
 using namespace musak::annotations;
 
@@ -34,4 +35,9 @@ void mark::translateBy(const point_t& offset) noexcept {
     this->endX += offset.first;
     this->startY += offset.second;
     this->endY += offset.second;
+}
+
+double mark::length() const noexcept {
+    return sqrt(pow(abs(this->endX - this->startX), 2) +
+                pow(abs(this->endY - this->startY), 2));
 }

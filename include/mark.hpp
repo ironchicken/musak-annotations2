@@ -26,6 +26,7 @@ namespace musak {
             const point_t end() const;
             const timestamp& time() const;
             void translateBy(const point_t& offset) noexcept;
+            double length() const noexcept;
 
         private:
             std::string col;
