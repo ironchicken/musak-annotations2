@@ -62,3 +62,13 @@ void shape::translateBy(const point_t& offset) noexcept {
         m.translateBy(offset);
     }
 }
+
+double shape::perimeter() const noexcept {
+    double p = 0;
+
+    for (auto& m : this->marks) {
+        p += m.length();
+    }
+
+    return p;
+}
