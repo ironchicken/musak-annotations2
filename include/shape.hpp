@@ -24,6 +24,8 @@ namespace musak {
         private:
             std::string id;
             std::vector<mark> marks;
+            mutable bool perimSet;
+            mutable double perim;
 
         }; // class shape
 

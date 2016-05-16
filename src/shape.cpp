@@ -64,11 +64,13 @@ void shape::translateBy(const point_t& offset) noexcept {
 }
 
 double shape::perimeter() const noexcept {
-    double p = 0;
+    if (!this->perimSet) {
+        this->perim = 0;
 
-    for (auto& m : this->marks) {
-        p += m.length();
+        for (auto& m : this->marks) {
+            this->perim += m.length();
+        }
+        this->perimSet = true;
     }
-
-    return p;
+    return this->perim;
 }
