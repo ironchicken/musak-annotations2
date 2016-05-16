@@ -74,3 +74,12 @@ double shape::perimeter() const noexcept {
     }
     return this->perim;
 }
+
+void shape::setScaledEdges() noexcept {
+    this->scaledEdges.clear();
+    double p = this->perimeter();
+    for (auto& m : this->marks) {
+        auto l = m.length();
+        this->scaledEdges.push_back(l / p);
+    }
+}

@@ -1,9 +1,12 @@
 #define BOOST_TEST_MODULE shapes
 #include <boost/test/unit_test.hpp>
+#define private public // kludge to allow testing of private members
 #include "shape.hpp"
 #include "mark.hpp"
+#define private private
 #include <vector>
 #include <tuple>
+#include <algorithm>
 
 using namespace musak::annotations;
 
@@ -151,4 +154,35 @@ BOOST_AUTO_TEST_CASE(shape_perimeter_square)
     auto s = shape("s", ms);
 
     BOOST_CHECK(s.perimeter() == 20.0);
+}
+
+BOOST_AUTO_TEST_CASE(shape_scaled_edges_zero)
+{
+    auto s = shape("s", {});
+    s.setScaledEdges();
+
+    BOOST_CHECK(s.scaledEdges.empty() == true);
+}
+
+BOOST_AUTO_TEST_CASE(shape_scaled_edges_line)
+{
+    std::vector<mark> ms { mark("#000000", 2, 0, 0, 10, 0, "00:00:00.0") };
+    auto s = shape("s", ms);
+    s.setScaledEdges();
+    std::vector<double> scaledEdges { 1.0 };
+
+    BOOST_CHECK(std::equal(s.scaledEdges.begin(), s.scaledEdges.end(), scaledEdges.begin()));
+}
+
+BOOST_AUTO_TEST_CASE(shape_scaled_edges_square)
+{
+    std::vector<mark> ms { mark("#000000", 2,  5,  5,  5, 10, "00:00:00.0"),
+            mark("#000000", 2,  5, 10, 10, 10, "00:00:00.0"),
+            mark("#000000", 2, 10, 10,  5, 10, "00:00:00.0"),
+            mark("#000000", 2,  5, 10,  5,  5, "00:00:00.0") };
+    auto s = shape("s", ms);
+    s.setScaledEdges();
+    std::vector<double> scaledEdges { 0.25, 0.25, 0.25, 0.25 };
+
+    BOOST_CHECK(std::equal(s.scaledEdges.begin(), s.scaledEdges.end(), scaledEdges.begin()));
 }
