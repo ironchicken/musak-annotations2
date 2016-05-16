@@ -38,6 +38,10 @@ void mark::translateBy(const point_t& offset) noexcept {
 }
 
 double mark::length() const noexcept {
-    return sqrt(pow(abs(this->endX - this->startX), 2) +
-                pow(abs(this->endY - this->startY), 2));
+    if (!this->lenSet) {
+        this->len = sqrt(pow(abs(this->endX - this->startX), 2) +
+                         pow(abs(this->endY - this->startY), 2));
+        this->lenSet = true;
+    }
+    return this->len;
 }

@@ -18,7 +18,7 @@ namespace musak {
             mark(const std::string& c, int p, int sx, int sy,
                  int ex, int ey, const std::string& t) : col(c), pen(p), startX(sx), startY(sy),
                                                          endX(ex), endY(ey),
-                                                         tod(std::unique_ptr<timestamp>(new timestamp(t))) { };
+                                                         tod(std::unique_ptr<timestamp>(new timestamp(t))) { this->length(); };
 
             mark& operator=(mark& m);
 
@@ -36,6 +36,8 @@ namespace musak {
             int endX;
             int endY;
             std::unique_ptr<timestamp> tod;
+            mutable bool lenSet;
+            mutable double len;
 
         }; // class mark
 
